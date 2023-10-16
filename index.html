@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+    <link rel="stylesheet" href="/style.css" />
+    
+  </head>
+  <body>
+    <header>
+      <h1>ToDo</h1>
+    </header>
+    <section id="lists">
+      <div class="insert-events">
+        <input type="text" id="enter-event" placeholder="Enter event" />
+        <input
+          type="submit"
+          id="add-event"
+          value="Add"
+          onclick="insertEvent()"
+        />
+      </div>
+      <div id="events">
+        <ul id="event-list"></ul>
+      </div>
+    </section>
+    <script>
+      
+
+      let event = document.getElementById("enter-event");
+      let list = document.getElementById("event-list");
+
+      function insertEvent() {
+        if (event.value.trim() != "") {
+          let l = document.createElement("li");
+          l.setAttribute("class", "indi-event");
+          l.textContent = event.value.trim();
+          list.appendChild(l);
+          event.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
